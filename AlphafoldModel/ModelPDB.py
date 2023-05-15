@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from .LoadedKDTree import LoadedKDTree
+from LoadedKDTree import LoadedKDTree
 from collections.abc import Iterable, Collection
 from typing import Union
 from collections import defaultdict
@@ -102,9 +102,7 @@ class ModelPDB():
 
     def __init__(self, model: str):
         self.pdbId = None
-        self.title, self.atoms, self.chains = self.__parse_model(model)
-        self.atomicKdtree = LoadedKDTree(self.atoms, self.__retrieve_atomic_coord)
-
+        self.title, self.atomicKdtree, self.chains = self.__parse_model(model)
 
     # dunder methods
     def __str__(self):
@@ -281,7 +279,7 @@ class ModelPDB():
                 currentChain = None
                 resStart = 1
 
-        return [title, atoms, chains]
+        return [title, LoadedKDTree(atoms, self.__retrieve_atomic_coord), chains]
 
 
     def __retrieve_atomic_coord(self, atom) -> tuple:
@@ -414,3 +412,4 @@ if __name__ == '__main__':
     pdb = ModelPDB('./test_files/AF-P04637-F1-model_v4.pdb')
 
     pdb.get_chain('A').get_info()
+    print(pdb.get_residues_within(20, 5))

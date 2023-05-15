@@ -1,5 +1,5 @@
-from .ModelPDB import ModelPDB
-from .ModelPAE import ModelPAE
+from ModelPDB import ModelPDB
+from ModelPAE import ModelPAE
 from itertools import combinations
 import numpy as np
 import warnings
@@ -155,8 +155,6 @@ class AlphafoldModel(ModelPDB,ModelPAE):
    
    
 if __name__ == '__main__':
-
-   from utils.utilities import function_timer
    
    alphafoldModel = AlphafoldModel('./test_files/AF-P0CG48-F1-model_v4.pdb','./test_files/AF-P0CG48-F1-predicted_aligned_error_v4.json')
    
