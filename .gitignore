@@ -2,3 +2,4 @@ venv
 AlphafoldModel/test_files
 .DS_store
 *.pyc
+test.py

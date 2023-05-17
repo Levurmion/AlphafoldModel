@@ -1,0 +1,6 @@
+PackageModules/AlphafoldModel
+PackageModules/LoadedKDTree
+PackageModules/ModelPAE
+PackageModules/ModelPDB
+PackageModules/__init__
+alphafoldmodel

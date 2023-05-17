@@ -1,5 +1,5 @@
-from ModelPDB import ModelPDB
-from ModelPAE import ModelPAE
+from .ModelPDB import ModelPDB
+from .ModelPAE import ModelPAE
 from itertools import combinations
 import numpy as np
 import warnings

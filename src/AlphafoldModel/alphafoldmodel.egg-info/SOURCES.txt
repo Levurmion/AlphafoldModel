@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+setup.py
+src/AlphafoldModel/AlphafoldModel.py
+src/AlphafoldModel/alphafoldmodel.py
+src/AlphafoldModel/PackageModules/AlphafoldModel.py
+src/AlphafoldModel/PackageModules/LoadedKDTree.py
+src/AlphafoldModel/PackageModules/ModelPAE.py
+src/AlphafoldModel/PackageModules/ModelPDB.py
+src/AlphafoldModel/PackageModules/__init__.py
+src/AlphafoldModel/alphafoldmodel.egg-info/PKG-INFO
+src/AlphafoldModel/alphafoldmodel.egg-info/SOURCES.txt
+src/AlphafoldModel/alphafoldmodel.egg-info/dependency_links.txt
+src/AlphafoldModel/alphafoldmodel.egg-info/requires.txt
+src/AlphafoldModel/alphafoldmodel.egg-info/top_level.txt
