@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: alphafoldmodel
-Version: 0.13
+Version: 0.20
 Summary: A module to parse Alphafold PDB files alongside their JSON PAE matrices into interactive Python objects.
 Home-page: https://github.com/yourusername/AlphafoldModel.git
 Author: Elbert Timothy

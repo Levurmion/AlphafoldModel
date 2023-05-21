@@ -17,7 +17,7 @@ class LoadedKDTree(KDTree):
       super().__init__(self.datapoints)   # initialize KDTree
       
    
-   def query_within_radius(self, query, radius: float, p: float=2, return_sorted: bool=True) -> list:
+   def query_within_radius(self, query, radius: float, p: float=2) -> list:
       '''
       `query: Any` = The query spatial coordinate. Can be an instance of the elements within `dataObj` or a coordinate array.
       
@@ -41,7 +41,7 @@ class LoadedKDTree(KDTree):
          error = 'Dimensions of coordinate array does not match existing `dataObj` elements.'
          raise ValueError(error)
       
-      neighbours = super().query_ball_point(queryCoordinate, radius, p, return_sorted=return_sorted)
+      neighbours = super().query_ball_point(queryCoordinate, radius, p)
       neighbouringDataObj = [self.dataObj[idx] for idx in neighbours]
       
       return neighbouringDataObj

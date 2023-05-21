@@ -1,6 +1,5 @@
-PackageModules/AlphafoldModel
-PackageModules/LoadedKDTree
-PackageModules/ModelPAE
-PackageModules/ModelPDB
-PackageModules/__init__
-alphafoldmodel
+alphafoldmodel/AlphafoldModel
+alphafoldmodel/LoadedKDTree
+alphafoldmodel/ModelPAE
+alphafoldmodel/ModelPDB
+alphafoldmodel/__init__

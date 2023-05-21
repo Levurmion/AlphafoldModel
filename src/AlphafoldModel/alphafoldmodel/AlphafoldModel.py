@@ -1,6 +1,7 @@
 from .ModelPDB import ModelPDB
 from .ModelPAE import ModelPAE
 from itertools import combinations
+from typing import Callable
 import numpy as np
 import warnings
 
@@ -47,7 +48,7 @@ class AlphafoldModel(ModelPDB,ModelPAE):
 
 
    # evaluate the plddt score as an average sliding window around a residue
-   def get_plddt_window(self, residue: int, window: int=5, threshold: float=70) -> tuple:
+   def get_plddt_window(self, residue: int, weighing_func: Callable[[list], float]=None, window: int=5, threshold: float=70) -> tuple:
       
       if window % 2 == 0 or window <= 0:
          raise ValueError('Window needs to be an integer positive odd number.')
@@ -57,9 +58,13 @@ class AlphafoldModel(ModelPDB,ModelPAE):
          windowLeft = residue-(window//2) if residue-(window//2) > 1 else 1
          windowRight = residue+(window//2)+1 if residue+(window//2) <= self.chains[0].length else self.chains[0].length + 1
          residuePlddts = [self.get_plddt(res) for res in range(int(windowLeft),int(windowRight),1)]
-         averagePlddt = np.mean([resRecord[0] for resRecord in residuePlddts])
-         
-         return (averagePlddt, averagePlddt >= threshold)
+
+         if isinstance(weighing_func, Callable):
+            weightedPlddt = weighing_func([resRecord[0] for resRecord in residuePlddts])
+            return (weightedPlddt, weightedPlddt >= threshold)
+         elif weighing_func == None:
+            averagePlddt = np.mean([resRecord[0] for resRecord in residuePlddts])
+            return (averagePlddt, averagePlddt >= threshold)
 
    
    # getter method for all unique combinations of residue pairs in a list
@@ -156,6 +161,32 @@ class AlphafoldModel(ModelPDB,ModelPAE):
    
 if __name__ == '__main__':
    
-   alphafoldModel = AlphafoldModel('./test_files/AF-P0CG48-F1-model_v4.pdb','./test_files/AF-P0CG48-F1-predicted_aligned_error_v4.json')
+   import numpy as np
    
-   print(alphafoldModel.get_plddt_window(20,5))
+   def gaussian(sigma: float) -> Callable:
+
+      def gaussian_weight(array):
+         print(array)
+         
+         array = np.array(array)
+         len_array = len(array)
+         
+         # Define the Gaussian function
+         def gaussian(x, mu, sig):
+            return np.exp(-np.power(x - mu, 2.) / (2 * np.power(sig, 2.)))
+
+         # Generate a weights array, centered around the middle of the array (mu), with a standard deviation (sigma) of 1.
+         weights = gaussian(np.linspace(0, len_array-1, len_array), int(len_array/2.0), sigma)
+         sum_of_weights = np.sum(weights)
+
+         # Multiply the original array by the weights
+         weighted_array = array * weights
+
+         return np.sum(weighted_array)/sum_of_weights
+
+      return gaussian_weight
+
+   
+   alphafoldModel = AlphafoldModel('src/AlphafoldModel/PackageModules/test_files/AF-H0YBT0-F1-model_v4.pdb','src/AlphafoldModel/PackageModules/test_files/AF-H0YBT0-F1-predicted_aligned_error_v4.json')
+   
+   print(alphafoldModel.get_plddt_window(200, weighing_func=gaussian(sigma=1)))

@@ -1,1 +1,1 @@
-from .PackageModules import AlphafoldModel, LoadedKDTree, ModelPAE, ModelPDB, Residue, Atom, Chain
+from .alphafoldmodel import AlphafoldModel, LoadedKDTree, ModelPAE, ModelPDB, Residue, Atom, Chain

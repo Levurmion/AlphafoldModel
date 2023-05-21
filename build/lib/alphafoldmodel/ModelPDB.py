@@ -209,7 +209,7 @@ class ModelPDB():
 
         for line in self.__readFile_as_generator(modelFilepath):
 
-            # split by whitespace characters
+            # get the data type of each line
             LINE_DTYPE = line[0:6].strip()
             
             if LINE_DTYPE == 'TITLE':
@@ -340,7 +340,6 @@ class ModelPDB():
         chainLength = proteinChain.length
         
         if queryResidue < 0 or queryResidue > chainLength - 1:
-            print(residue)
             residueOutOfRange = f'Residue out of range. Chain {queryChain} is {chainLength} residues long.'
             raise ValueError(residueOutOfRange)
         

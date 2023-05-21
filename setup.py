@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="alphafoldmodel",
-    version="0.13",
+    version="0.20",
     packages=find_packages(),
 
     # Metadata
@@ -23,9 +23,10 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     python_requires='>=3.6',
-    py_modules=["alphafoldmodel","PackageModules/__init__","PackageModules/AlphafoldModel","PackageModules/ModelPDB","PackageModules/ModelPAE","PackageModules/LoadedKDTree"],
+    py_modules=["alphafoldmodel/__init__","alphafoldmodel/AlphafoldModel","alphafoldmodel/ModelPDB","alphafoldmodel/ModelPAE","alphafoldmodel/LoadedKDTree"],
     package_dir={
         "": "src/AlphafoldModel"
         },
     install_requires=required
 )
+

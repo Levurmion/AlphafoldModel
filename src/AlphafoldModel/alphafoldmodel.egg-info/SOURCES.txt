@@ -3,11 +3,11 @@ README.md
 setup.py
 src/AlphafoldModel/AlphafoldModel.py
 src/AlphafoldModel/alphafoldmodel.py
-src/AlphafoldModel/PackageModules/AlphafoldModel.py
-src/AlphafoldModel/PackageModules/LoadedKDTree.py
-src/AlphafoldModel/PackageModules/ModelPAE.py
-src/AlphafoldModel/PackageModules/ModelPDB.py
-src/AlphafoldModel/PackageModules/__init__.py
+src/AlphafoldModel/alphafoldmodel/AlphafoldModel.py
+src/AlphafoldModel/alphafoldmodel/LoadedKDTree.py
+src/AlphafoldModel/alphafoldmodel/ModelPAE.py
+src/AlphafoldModel/alphafoldmodel/ModelPDB.py
+src/AlphafoldModel/alphafoldmodel/__init__.py
 src/AlphafoldModel/alphafoldmodel.egg-info/PKG-INFO
 src/AlphafoldModel/alphafoldmodel.egg-info/SOURCES.txt
 src/AlphafoldModel/alphafoldmodel.egg-info/dependency_links.txt
