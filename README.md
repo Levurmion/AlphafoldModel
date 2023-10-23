@@ -1,4 +1,4 @@
-## **alphafoldmodel** is a package to parse Alphafold PDB structures and PAE Matrices into interactive Python objects.
+## **AlphafoldModel** is a package to parse Alphafold PDB structures and PAE Matrices into interactive Python objects.
 
 ### The package contains the following classes:
 - `AlphafoldModel`: Parses the Alphafold model PDB file alongside its JSON PAE matrix into an interactive Python object. It allows declarative queries for a model's local PAE and plDDT metrics.
