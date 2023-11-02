@@ -8,3 +8,6 @@
 
 ### Explore the source file in:
 `src/AlphafoldModel/alphafoldmodel`
+
+### Installing
+  pip install alphafoldmodel
