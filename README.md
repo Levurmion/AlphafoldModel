@@ -10,4 +10,4 @@
 `src/AlphafoldModel/alphafoldmodel`
 
 ### Installing
-  pip install alphafoldmodel
+    pip install alphafoldmodel
