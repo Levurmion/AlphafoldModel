@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="alphafoldmodel",
+    name="AlphafoldModel",
     version="0.20",
     packages=find_packages(),
 

@@ -1,5 +1,0 @@
-AlphafoldModel
-LoadedKDTree
-ModelPAE
-ModelPDB
-alphafoldmodel

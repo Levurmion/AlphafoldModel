@@ -1,5 +1,0 @@
-alphafoldmodel/AlphafoldModel
-alphafoldmodel/LoadedKDTree
-alphafoldmodel/ModelPAE
-alphafoldmodel/ModelPDB
-alphafoldmodel/__init__
