@@ -47,9 +47,47 @@ alphafoldModel.get_local_plddt(1, average=False)
 # get average PAE within some radius (in Å) of a residue
 # by default, returns the average PAE of all possible residue pairs within 5Å
 alphafoldModel.get_local_pae(1)
+
+# getting chain information
+# returns a dictionary with various fields like length, sequence, etc
+# Alphafold models are currently single chain but multi-chain parsing have been built in for future extensibility
+alphafoldModel.get_chain('A').get_info()
+
+# iterating through residues in a chain
+for residue in alphafoldModel.get_chain('A'):
+    # do something
 ```
 
 Other methods are available and can be explored in `src/alphafoldmodel`. It is recommended to leverage code completion and parameter information features through Intellisense built into VSCode. All important methods have been documented in the source code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
