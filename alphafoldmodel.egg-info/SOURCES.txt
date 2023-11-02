@@ -1,8 +1,0 @@
-LICENSE.txt
-README.md
-setup.py
-alphafoldmodel.egg-info/PKG-INFO
-alphafoldmodel.egg-info/SOURCES.txt
-alphafoldmodel.egg-info/dependency_links.txt
-alphafoldmodel.egg-info/requires.txt
-alphafoldmodel.egg-info/top_level.txt
